@@ -7,19 +7,19 @@ import org.springframework.data.elasticsearch.annotations.Document;
 public class SampleData {
 
 	@Id
-	private String temp_id;
+	private String tempId;
 	private String rand1;
 	private String rand2;
 	private String rand3;
 	private String rand4;
 	private String fixed;
 
-	public String getTemp_id() {
-		return temp_id;
+	public String getTempId() {
+		return tempId;
 	}
 
-	public void setTemp_id(String temp_id) {
-		this.temp_id = temp_id;
+	public void setTempId(String tempId) {
+		this.tempId = tempId;
 	}
 
 	public String getRand1() {
