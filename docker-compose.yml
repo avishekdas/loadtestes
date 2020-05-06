@@ -1,0 +1,14 @@
+version: '2'
+services:
+  loadtestesservice:
+    image: loadtestes/loadtestes
+    restart: always
+    ports:
+      - "8226:8226"
+    mem_limit: 700m
+    mem_reservation: 100m
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8226"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+
