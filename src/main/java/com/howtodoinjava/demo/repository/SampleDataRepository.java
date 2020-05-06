@@ -10,8 +10,15 @@ import com.howtodoinjava.demo.model.SampleData;
 @Repository
 public interface SampleDataRepository extends ElasticsearchRepository<SampleData, String> {
 	
-	List<SampleData> findByValue(String value);
-
-	SampleData findByDataId(Long dataId);
+	SampleData findByTemp_id(Long temp_id);
 	
+	List<SampleData> findByRand1(String rand1);
+
+	List<SampleData> findByRand2(String rand2);
+	
+	List<SampleData> findByRand3(String rand3);
+	
+	List<SampleData> findByRand4(String rand4);
+	
+	List<SampleData> findByFixed(String fixed);
 }

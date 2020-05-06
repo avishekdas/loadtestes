@@ -73,7 +73,7 @@ public class InformationSearchServiceImpl implements InformationSearchService {
 
 	@Override
 	public String sampleDataDelete(String tempId) {
-		SampleData deleteMasterData = sampleDataRepository.findByDataId(Long.parseLong(tempId));
+		SampleData deleteMasterData = sampleDataRepository.findByTemp_id(Long.parseLong(tempId));
 		sampleDataRepository.delete(deleteMasterData);
 		return tempId;
 	}
