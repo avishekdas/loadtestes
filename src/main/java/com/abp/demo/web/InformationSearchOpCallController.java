@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.web;
+package com.abp.demo.web;
 
 import java.util.List;
 
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.howtodoinjava.demo.model.MasterData;
-import com.howtodoinjava.demo.model.SampleData;
-import com.howtodoinjava.demo.repository.MasterDataRepository;
-import com.howtodoinjava.demo.repository.SampleDataRepository;
-import com.howtodoinjava.demo.service.InformationSearchService;
-import com.howtodoinjava.demo.service.MultiThreadedTrigger;
+import com.abp.demo.model.MasterData;
+import com.abp.demo.model.SampleData;
+import com.abp.demo.repository.MasterDataRepository;
+import com.abp.demo.repository.SampleDataRepository;
+import com.abp.demo.service.InformationSearchService;
+import com.abp.demo.service.MultiThreadedTrigger;
 
 @RestController
 @RequestMapping("/search")

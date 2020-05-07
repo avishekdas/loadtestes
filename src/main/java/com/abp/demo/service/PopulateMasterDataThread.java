@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.service;
+package com.abp.demo.service;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -16,10 +16,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.abp.demo.model.SampleData;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.howtodoinjava.demo.model.SampleData;
 
 @Component
 @Scope("prototype")

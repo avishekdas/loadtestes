@@ -1,11 +1,11 @@
-package com.howtodoinjava.demo.repository;
+package com.abp.demo.repository;
 
 import java.util.List;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
-import com.howtodoinjava.demo.model.SampleData;
+import com.abp.demo.model.SampleData;
 
 @Repository
 public interface SampleDataRepository extends ElasticsearchRepository<SampleData, String> {

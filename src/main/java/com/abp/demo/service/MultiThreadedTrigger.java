@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.service;
+package com.abp.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;

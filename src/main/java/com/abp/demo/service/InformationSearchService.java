@@ -1,9 +1,9 @@
-package com.howtodoinjava.demo.service;
+package com.abp.demo.service;
 
 import java.util.List;
 
-import com.howtodoinjava.demo.model.MasterData;
-import com.howtodoinjava.demo.model.SampleData;
+import com.abp.demo.model.MasterData;
+import com.abp.demo.model.SampleData;
 
 public interface InformationSearchService {
 

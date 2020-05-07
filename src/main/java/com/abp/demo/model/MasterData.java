@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.model;
+package com.abp.demo.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

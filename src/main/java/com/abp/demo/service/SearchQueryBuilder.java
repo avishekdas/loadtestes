@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.service;
+package com.abp.demo.service;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Component;
 
-import com.howtodoinjava.demo.model.MasterData;
-import com.howtodoinjava.demo.model.SampleData;
+import com.abp.demo.model.MasterData;
+import com.abp.demo.model.SampleData;
 
 @Component
 public class SearchQueryBuilder {

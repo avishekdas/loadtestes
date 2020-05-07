@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.service;
+package com.abp.demo.service;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
-import com.howtodoinjava.demo.model.MasterData;
-import com.howtodoinjava.demo.model.SampleData;
-import com.howtodoinjava.demo.repository.MasterDataRepository;
-import com.howtodoinjava.demo.repository.SampleDataRepository;
+import com.abp.demo.model.MasterData;
+import com.abp.demo.model.SampleData;
+import com.abp.demo.repository.MasterDataRepository;
+import com.abp.demo.repository.SampleDataRepository;
 
 @Service
 public class InformationSearchServiceImpl implements InformationSearchService {
