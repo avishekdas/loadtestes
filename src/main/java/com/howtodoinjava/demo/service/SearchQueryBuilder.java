@@ -60,8 +60,11 @@ public class SearchQueryBuilder {
 	public List<SampleData> searchSampleDataByValue(String text) {
 
 		QueryBuilder query = QueryBuilders.boolQuery()
-				.should(QueryBuilders.queryStringQuery(text).lenient(true).field("value"))
-				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("value"));
+				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("rand1"))
+				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("rand2"))
+				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("rand3"))
+				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("rand4"))
+				.should(QueryBuilders.queryStringQuery("*" + text + "*").lenient(true).field("fixed"));
 
 		NativeSearchQuery build = new NativeSearchQueryBuilder().withQuery(query).build();
 

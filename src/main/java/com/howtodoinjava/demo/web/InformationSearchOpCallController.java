@@ -21,6 +21,7 @@ import com.howtodoinjava.demo.model.SampleData;
 import com.howtodoinjava.demo.repository.MasterDataRepository;
 import com.howtodoinjava.demo.repository.SampleDataRepository;
 import com.howtodoinjava.demo.service.InformationSearchService;
+import com.howtodoinjava.demo.service.MultiThreadedTrigger;
 
 @RestController
 @RequestMapping("/search")
@@ -32,6 +33,8 @@ public class InformationSearchOpCallController {
 	MasterDataRepository masterDataRepository;
 	@Autowired
 	SampleDataRepository sampleDataRepository;
+	@Autowired
+	MultiThreadedTrigger threadTrigger;
 
 	@PostMapping(value = "/elastic_search_master_data")
 	public ResponseEntity<MasterData> elasticSearchMasterData(@RequestBody @Valid MasterData masterDate)
@@ -97,4 +100,16 @@ public class InformationSearchOpCallController {
 		sampleDataRepository.deleteAll();
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+
+	@GetMapping(value = "/populate_data/{numberOfRequests}/{numberOfThreads}")
+	public ResponseEntity<String> populateSampleData(@PathVariable String numberOfRequests,
+			@PathVariable String numberOfThreads) throws Exception {
+		try {
+			threadTrigger.run(Integer.parseInt(numberOfRequests), Integer.parseInt(numberOfThreads));
+			return new ResponseEntity<String>("Successfully triggered", (HttpStatus.OK));
+		} catch (NumberFormatException e) {
+			return new ResponseEntity<String>("Failed to triggered", (HttpStatus.BAD_REQUEST));
+		}
+	}
+
 }
