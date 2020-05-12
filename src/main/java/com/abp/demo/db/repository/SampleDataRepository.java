@@ -1,11 +1,11 @@
-package com.abp.demo.repository;
+package com.abp.demo.db.repository;
 
 import java.util.List;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
-import com.abp.demo.model.SampleData;
+import com.abp.demo.es.model.SampleData;
 
 @Repository
 public interface SampleDataRepository extends ElasticsearchRepository<SampleData, String> {

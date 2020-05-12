@@ -13,8 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import com.abp.demo.db.model.UserDAO;
+import com.abp.demo.db.repository.UserRepository;
+
 @Component
 public class MultiThreadedTrigger {
+	
+	@Autowired
+	UserRepository userRepository;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MultiThreadedTrigger.class);
 	
@@ -29,10 +35,15 @@ public class MultiThreadedTrigger {
 
         ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
 
-        List<PopulateMasterDataThread> tasks = new ArrayList<>(numberOfRequests);
+//        List<PopulateMasterDataThread> tasks = new ArrayList<>(numberOfRequests);
+        List<PopulateUserDataThread> tasks = new ArrayList<>(numberOfRequests);
+        
+        //Fetch userID from DB
+        List<UserDAO> userList = userRepository.getUserList(numberOfRequests);
 
-        for (int i = 0; i < numberOfRequests; i++) {
-        	PopulateMasterDataThread wt = context.getBean(PopulateMasterDataThread.class, String.valueOf(i));
+//        for (int i = 0; i < numberOfRequests; i++) {
+        for(UserDAO user : userList) {
+        	PopulateUserDataThread wt = context.getBean(PopulateUserDataThread.class, String.valueOf(user.getUserid()));
             tasks.add(wt);
         }
 

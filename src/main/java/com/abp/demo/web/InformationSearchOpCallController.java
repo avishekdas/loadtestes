@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abp.demo.model.MasterData;
-import com.abp.demo.model.SampleData;
-import com.abp.demo.repository.MasterDataRepository;
-import com.abp.demo.repository.SampleDataRepository;
+import com.abp.demo.db.repository.MasterDataRepository;
+import com.abp.demo.db.repository.SampleDataRepository;
+import com.abp.demo.es.model.MasterData;
+import com.abp.demo.es.model.SampleData;
 import com.abp.demo.service.InformationSearchService;
 import com.abp.demo.service.MultiThreadedTrigger;
 
@@ -106,6 +106,18 @@ public class InformationSearchOpCallController {
 			@PathVariable String numberOfThreads) throws Exception {
 		try {
 			threadTrigger.run(Integer.parseInt(numberOfRequests), Integer.parseInt(numberOfThreads));
+			return new ResponseEntity<String>("Successfully triggered", (HttpStatus.OK));
+		} catch (NumberFormatException e) {
+			return new ResponseEntity<String>("Failed to triggered", (HttpStatus.BAD_REQUEST));
+		}
+	}
+
+	@GetMapping(value = "/populate_user/{numberOfRequests}/{numberOfThreads}")
+	public ResponseEntity<String> populateUserData(@PathVariable String numberOfRequests,
+			@PathVariable String numberOfThreads) throws Exception {
+		try {
+			threadTrigger.run(Integer.parseInt(numberOfRequests), Integer.parseInt(numberOfThreads));
+//			informationSearchService.fetchUserDataFromDB(Long.parseLong(userId));
 			return new ResponseEntity<String>("Successfully triggered", (HttpStatus.OK));
 		} catch (NumberFormatException e) {
 			return new ResponseEntity<String>("Failed to triggered", (HttpStatus.BAD_REQUEST));

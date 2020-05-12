@@ -11,8 +11,8 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Component;
 
-import com.abp.demo.model.MasterData;
-import com.abp.demo.model.SampleData;
+import com.abp.demo.es.model.MasterData;
+import com.abp.demo.es.model.SampleData;
 
 @Component
 public class SearchQueryBuilder {

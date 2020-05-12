@@ -4,17 +4,22 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
-import com.abp.demo.model.MasterData;
-import com.abp.demo.model.SampleData;
-import com.abp.demo.repository.MasterDataRepository;
-import com.abp.demo.repository.SampleDataRepository;
+import com.abp.demo.db.repository.MasterDataRepository;
+import com.abp.demo.db.repository.SampleDataRepository;
+import com.abp.demo.es.model.MasterData;
+import com.abp.demo.es.model.SampleData;
 
 @Service
 public class InformationSearchServiceImpl implements InformationSearchService {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(InformationSearchServiceImpl.class);
+
 	@Autowired
 	MasterDataRepository masterDataRepository;
 	@Autowired
@@ -50,7 +55,7 @@ public class InformationSearchServiceImpl implements InformationSearchService {
 		masterDataRepository.delete(deleteMasterData);
 		return tempId;
 	}
-	
+
 	@Override
 	public SampleData elasticSearchSampleData(SampleData data) {
 		sampleDataRepository.save(data);
@@ -77,4 +82,5 @@ public class InformationSearchServiceImpl implements InformationSearchService {
 		sampleDataRepository.delete(deleteMasterData);
 		return tempId;
 	}
+
 }

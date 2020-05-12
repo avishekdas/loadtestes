@@ -21,7 +21,7 @@
 		<java.version>1.8</java.version>
 		<start-class>com.abp.demo.DemoApplication</start-class>
 		<docker.image.tag>aws11</docker.image.tag>
-        <docker.plugin.version>0.4.9</docker.plugin.version>
+		<docker.plugin.version>0.4.9</docker.plugin.version>
 		<docker.image.prefix>loadtestes</docker.image.prefix>
 	</properties>
 
@@ -35,10 +35,10 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
-        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr-complete</artifactId>
 			<version>3.5.2</version>
@@ -52,8 +52,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -105,5 +118,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
